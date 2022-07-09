@@ -1,3 +1,9 @@
+.header-offset {
+  @media screen and (min-width: 768px) {
+    height: min(13vw - 60px, 120px);
+  }
+}
+
 .header {
   position: sticky;
   background-color: black;
@@ -8,10 +14,6 @@
     display: flex;
     padding-block: 16px;
     justify-content: space-between;
-
-    @media screen and (min-width: 768px) {
-      padding-block: min(13vw - 60px, 120px);
-    }
   }
 
   &__logo {
