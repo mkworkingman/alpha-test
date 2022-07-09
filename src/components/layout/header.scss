@@ -1,5 +1,6 @@
 .header {
   position: sticky;
+  background-color: black;
   top: 0;
   left: 0;
   
@@ -79,14 +80,14 @@
     top: 100%;
     left: 0;
     right: 0;
-    padding-inline: 20px;
+    padding: 20px;
     background-color: #000;
     display: none;
 
     @media screen and (min-width: 768px) {
       position: static;
       display: flex;
-      padding-inline: 0;
+      padding: 0;
       flex: 1;
     }
 

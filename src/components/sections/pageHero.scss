@@ -1,0 +1,13 @@
+.pagehero {
+  padding-block: 16px;
+
+  &__heading {
+    font-size: clamp(26px, 4vw, 53px);
+    padding-bottom: clamp(10px, 2vw, 20px);
+  }
+
+  &__description {
+    font-size: clamp(16px, 2vw, 20px);
+    padding-block: clamp(30px, 6vw, 60px) clamp(10px, 2vw, 20px);
+  }
+}
