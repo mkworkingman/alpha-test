@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;300;400;500&display=swap');
+
+:root {
+  --white: #fff;
+  --text-clr: #c2bcd2;
+}
+
 *,
 *::before,
 *::after {
@@ -15,6 +22,8 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: 'JetBrains Mono', monospace;
+  background-color: darkgray;
 }
 
 ul,
