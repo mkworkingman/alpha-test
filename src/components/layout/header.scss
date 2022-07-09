@@ -2,9 +2,16 @@
   position: sticky;
   top: 0;
   left: 0;
+  
+  .container {
+    display: flex;
+    padding-block: 16px;
+    justify-content: space-between;
+  }
 
   &__logo {
-    width: 188px;
+    width: 150px;
+    /* width: 188px; */
   }
 
   .hamburger-icon {
@@ -13,6 +20,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
 
     &__lines {
       width: 26px;
@@ -52,6 +63,47 @@
       &::after {
         transform: rotateZ(45deg);
         top: 0;
+      }
+    }
+  }
+
+  .hamburger-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding-inline: 20px;
+    background-color: #000;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      position: static;
+      display: flex;
+      padding-inline: 0;
+      flex: 1;
+    }
+
+    &--active {
+      display: block;
+
+      @media screen and (min-width: 768px) {
+        display: flex;
+      }
+    }
+
+    &__links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        margin-bottom: 0;
+        align-items: center;
+        margin-inline: auto;
+        gap: 39px;
       }
     }
   }
