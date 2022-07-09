@@ -3,6 +3,8 @@ import './main.scss'
 
 export const Main = () => {
   return (
-    <main className="main">Main</main>
+    <main className="main">
+      <div className="container">test</div>
+    </main>
   )
 }

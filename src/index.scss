@@ -59,3 +59,13 @@ select {
   display: flex;
   flex-direction: column;
 }
+
+.container {
+  max-width: 1130px;
+  padding-inline: 20px;
+  margin-inline: auto;
+
+  @media screen and (min-width: 768px) {
+    padding-inline: 40px;
+  }
+}
