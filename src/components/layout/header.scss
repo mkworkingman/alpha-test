@@ -3,7 +3,56 @@
   top: 0;
   left: 0;
 
-  .logo {
+  &__logo {
     width: 188px;
+  }
+
+  .hamburger-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__lines {
+      width: 26px;
+      height: 4px;
+      border-radius: 10px;
+      background-color: var(--white);
+      position: relative;
+      transition: background-color 200ms;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 26px;
+        height: 4px;
+        border-radius: 10px;
+        background-color: var(--white);
+        top: 8px;
+        transition: transform 200ms, top 200ms;
+      }
+
+      &::after {
+        top: -8px;
+      }
+    }
+
+    &--active .hamburger-icon__lines {
+      background-color: transparent;
+
+      &::before {
+        transform: rotateZ(-45deg);
+        top: 0;
+      }
+
+      &::after {
+        transform: rotateZ(45deg);
+        top: 0;
+      }
+    }
   }
 }
