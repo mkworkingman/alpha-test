@@ -21,5 +21,42 @@
       margin-bottom: 35px;
       aspect-ratio: 330/435;
     }
+
+    &__name {
+      font-size: 20px;
+      font-weight: 300;
+      color: #fff;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 3px;
+        width: 73.637%;
+        background-color: #534878;
+        bottom: -10px;
+        left: 0px;
+      }
+    }
+
+    &__description {
+      margin-block: 23px 15px;
+      font-weight: 200;
+    }
+
+    &__more {
+      margin-top: auto;
+      color: #fff;
+      opacity: 0.5;
+      font-weight: 200;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      width: fit-content;
+      transition: opacity 200ms;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }
