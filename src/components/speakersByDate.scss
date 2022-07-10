@@ -1,0 +1,25 @@
+.speakers-by-date {
+  margin-top: 62px;
+
+  &__heading {
+    font-size: 27px;
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, clamp(210px, 29vw, 330px));
+  }
+
+  .speaker {
+    display: flex;
+    flex-direction: column;
+
+    &__img {
+      margin-bottom: 35px;
+      aspect-ratio: 330/435;
+    }
+  }
+}
