@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { SpeakersByDate } from '../SpeakersByDate'
+import { CustomSelect } from '../CustomSelect'
 
 export const Speakers = () => {
   const [initialSpeakers, setInitialSpeakers] = useState(null)
@@ -22,7 +23,7 @@ export const Speakers = () => {
   return (
     <section>
       <h2>Спикеры нашего форума</h2>
-      <h3>...filter will be here...</h3>
+      <CustomSelect name="Пол спикера" values={['Мужской', 'Женский']} />
       {currentTime && currentTime.map(hour => (
         <SpeakersByDate
           hour={hour}
