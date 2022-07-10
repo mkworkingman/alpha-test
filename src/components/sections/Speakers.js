@@ -13,10 +13,9 @@ export const Speakers = () => {
   useEffect(() => {
     axios.get('https://pro.alphadevteam.com/api/tz/speakers')
       .then(res => {
-        const time = [...new Set(res.data.response.map(v => v.performance_time))]
         setInitialSpeakers(res.data.response)
         setCurrentSpeakers(res.data.response)
-        setCurrentTime(time)
+        setCurrentTime([...new Set(res.data.response.map(v => v.performance_time))])
       })
   }, [])
 
