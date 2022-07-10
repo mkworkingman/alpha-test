@@ -6,7 +6,6 @@ import { CustomSelect } from '../CustomSelect'
 export const Speakers = () => {
   const [initialSpeakers, setInitialSpeakers] = useState(null)
   const [currentSpeakers, setCurrentSpeakers] = useState(null)
-  const [initialTime, setInitialTime] = useState(null)
   const [currentTime, setCurrentTime] = useState(null)
   const [selectedGender, setSelectedGender] = useState(null)
   const [selectedTime, setSelectedTime] = useState(null)
@@ -17,10 +16,16 @@ export const Speakers = () => {
         const time = [...new Set(res.data.response.map(v => v.performance_time))]
         setInitialSpeakers(res.data.response)
         setCurrentSpeakers(res.data.response)
-        setInitialTime(time)
         setCurrentTime(time)
       })
   }, [])
+
+  useEffect(() => {
+    let speakers = initialSpeakers
+    if (selectedGender) speakers = speakers.filter(v => v.gender === selectedGender)
+    if (selectedTime) speakers = speakers.filter(v => v.performance_time === selectedTime)
+    setCurrentSpeakers(speakers)
+  }, [selectedGender, selectedTime, initialSpeakers])
 
   return (
     <section>
