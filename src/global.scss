@@ -73,10 +73,6 @@ select {
 
 .container {
   max-width: 1130px;
-  padding-inline: 20px;
+  padding-inline: clamp(20px, 5vw, 40px);
   margin-inline: auto;
-
-  @media screen and (min-width: 768px) {
-    padding-inline: 40px;
-  }
 }

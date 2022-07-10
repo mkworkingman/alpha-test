@@ -9,8 +9,8 @@
   &__list {
     display: grid;
     gap: 30px;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, clamp(210px, 29vw, 330px));
+    justify-content: space-evenly;
+    grid-template-columns: repeat(auto-fill, clamp(240px, 28vw, 330px));
   }
 
   .speaker {
