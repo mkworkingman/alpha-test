@@ -14,4 +14,8 @@
     font-size: clamp(16px, 2vw, 20px);
     padding-block: clamp(30px, 6vw, 60px) clamp(10px, 2vw, 20px);
   }
+
+  .registration-btn {
+    margin-top: min(11vw, 152px);
+  }
 }
