@@ -8,6 +8,8 @@ export const Speakers = () => {
   const [currentSpeakers, setCurrentSpeakers] = useState(null)
   const [initialTime, setInitialTime] = useState(null)
   const [currentTime, setCurrentTime] = useState(null)
+  const [selectedGender, setSelectedGender] = useState(null)
+  const [selectedTime, setSelectedTime] = useState(null)
 
   useEffect(() => {
     axios.get('https://pro.alphadevteam.com/api/tz/speakers')
@@ -23,7 +25,18 @@ export const Speakers = () => {
   return (
     <section>
       <h2>Спикеры нашего форума</h2>
-      <CustomSelect name="Пол спикера" values={['Мужской', 'Женский']} />
+      <CustomSelect
+        name="Пол спикера"
+        values={['male', 'female']}
+        currentValue={selectedGender}
+        setValue={setSelectedGender}
+      />
+      <CustomSelect
+        name="Время выступления"
+        values={currentTime || []}
+        currentValue={selectedTime}
+        setValue={setSelectedTime}
+      />
       {currentTime && currentTime.map(hour => (
         <SpeakersByDate
           hour={hour}

@@ -25,7 +25,7 @@
     &__name {
       font-size: 20px;
       font-weight: 300;
-      color: #fff;
+      color: var(--white);
       position: relative;
 
       &::after {
@@ -46,7 +46,7 @@
 
     &__more {
       margin-top: auto;
-      color: #fff;
+      color: var(--white);
       opacity: 0.5;
       font-weight: 200;
       text-decoration: underline;
