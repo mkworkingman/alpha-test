@@ -2,7 +2,7 @@
   padding-top: 16px;
 
   @media screen and (min-width: 768px) {
-    padding-top: min(13vw - 60px, 120px);
+    padding-top: min(calc(13vw - 60px), 120px);
   }
 
   &__heading {

@@ -1,6 +1,6 @@
 .header-offset {
   @media screen and (min-width: 768px) {
-    height: min(13vw - 60px, 120px);
+    height: min(calc(13vw - 60px), 120px);
   }
 }
 
