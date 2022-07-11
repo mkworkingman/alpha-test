@@ -9,6 +9,8 @@ export const Speakers = () => {
   const dispatch = useDispatch()
   const speakers = useSelector(state => state.filter.currentSpeakers)
   const time = useSelector(state => state.filter.time)
+  const loading = useSelector(state => state.filter.loading)
+  const success = useSelector(state => state.filter.success)
 
   useEffect(() => {
       dispatch(getSpeakers())
@@ -17,14 +19,22 @@ export const Speakers = () => {
   return (
     <section className="speakers">
       <h2 id="speakers" className="speakers__heading">Спикеры нашего форума</h2>
-      <Filter />
-      {time && time.map(hour => (
-        <SpeakersByDate
-          hour={hour}
-          speakers={speakers.filter(v => v.performance_time === hour)}
-          key={hour}
-        />
-      ))}
+      {loading
+        ? <h3>Loading...</h3>
+        : (success
+            ? <>
+                <Filter />
+                {time && time.map(hour => (
+                  <SpeakersByDate
+                    key={hour}
+                    hour={hour}
+                    speakers={speakers.filter(v => v.performance_time === hour)}
+                  />
+                ))}
+            </>
+            : <h3>Sorry, something went wrong...</h3>
+          )
+      }
     </section>
   )
 }
