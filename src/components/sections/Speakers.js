@@ -3,6 +3,7 @@ import { SpeakersByDate } from '../SpeakersByDate'
 import { useDispatch, useSelector } from 'react-redux'
 import { getSpeakers } from '../../features/filter/filterSlice'
 import { Filter } from '../Filter'
+import './speakers.scss'
 
 export const Speakers = () => {
   const dispatch = useDispatch()
@@ -14,8 +15,8 @@ export const Speakers = () => {
   }, [dispatch])
 
   return (
-    <section>
-      <h2 id="speakers">Спикеры нашего форума</h2>
+    <section className="speakers">
+      <h2 id="speakers" className="speakers__heading">Спикеры нашего форума</h2>
       <Filter />
       {time && time.map(hour => (
         <SpeakersByDate

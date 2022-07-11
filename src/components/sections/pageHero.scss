@@ -4,7 +4,7 @@
   isolation: isolate;
 
   @media screen and (min-width: 768px) {
-    padding-top: min(calc(13vw - 60px), 120px);
+    padding-block: min(calc(13vw - 60px), 120px);
   }
 
   @media screen and (min-width: 1200px) {

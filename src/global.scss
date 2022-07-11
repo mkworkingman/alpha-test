@@ -15,6 +15,7 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -24,7 +25,9 @@ body {
   line-height: 1.3;
   font-family: 'JetBrains Mono', monospace;
   background-color: #060606;
-  background-image: radial-gradient(at top right, #190022, transparent 400px), radial-gradient(at top left, #00092E, transparent 400px);
+  background-image:
+    radial-gradient(at top right, #190022, transparent 400px),
+    radial-gradient(at top left, #00092E, transparent 400px);
   background-repeat: no-repeat;
 
   color: var(--text-clr);
