@@ -34,11 +34,16 @@
 
   &__values-list {
     position: absolute;
+    display: none;
     left: -1px;
     top: 100%;
     border: 1px solid var(--white);
     background-color: #000;
     width: calc(100% + 2px);
+
+    &--active {
+      display: block;
+    }
   }
 
   &__value {
