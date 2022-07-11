@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { SpeakersByDate } from '../SpeakersByDate'
 import { CustomSelect } from '../CustomSelect'
+import { useDispatch } from 'react-redux'
+import { getSpeakers } from '../../features/filter/filterSlice'
 
 export const Speakers = () => {
   const [initialSpeakers, setInitialSpeakers] = useState(null)
@@ -9,6 +11,12 @@ export const Speakers = () => {
   const [currentTime, setCurrentTime] = useState(null)
   const [selectedGender, setSelectedGender] = useState(null)
   const [selectedTime, setSelectedTime] = useState(null)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+      dispatch(getSpeakers())
+  }, [dispatch])
 
   useEffect(() => {
     axios.get('https://pro.alphadevteam.com/api/tz/speakers')
