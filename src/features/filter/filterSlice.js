@@ -58,6 +58,6 @@ export const filterSlice = createSlice({
   },
 })
 
-export const { setCurrentGender, setCurrentTime, clear, search } = filterSlice.actions;
+export const { setCurrentGender, setCurrentTime, clear, search } = filterSlice.actions
 
 export default filterSlice.reducer

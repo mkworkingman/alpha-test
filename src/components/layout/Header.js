@@ -28,7 +28,7 @@ export const Header = () => {
       clearTimeout(timeout)
       timeout = setTimeout(() => {
         addUnderline()
-      }, 200);
+      }, 200)
     }
     window.addEventListener('scroll', scrollHandler)
     return () => {
