@@ -53,7 +53,8 @@ export const Speakers = () => {
         <SpeakersByDate
           hour={hour}
           speakers={currentSpeakers.filter(v => v.performance_time === hour)}
-          key={hour} />
+          key={hour}
+        />
       ))}
     </section>
   )
