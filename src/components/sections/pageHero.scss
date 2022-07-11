@@ -1,13 +1,34 @@
 .pagehero {
   padding-top: 16px;
+  position: relative;
+  isolation: isolate;
 
   @media screen and (min-width: 768px) {
     padding-top: min(calc(13vw - 60px), 120px);
   }
 
+  @media screen and (min-width: 1200px) {
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -173px;
+      height: 100%;
+      width: 680px;
+      background-image: url('../../images/face.png');
+      background-repeat: no-repeat;
+      background-position: right;
+      z-index: -1;
+      -webkit-mask-image: linear-gradient(transparent, white, transparent);
+      mask-image: linear-gradient(transparent, white, transparent);
+    }
+  }
+
   &__heading {
     font-size: clamp(26px, 4vw, 53px);
     padding-bottom: clamp(10px, 2vw, 20px);
+    font-weight: 400;
+    max-width: 740px;
   }
 
   &__description {

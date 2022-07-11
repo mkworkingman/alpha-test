@@ -6,7 +6,6 @@
 
 .header {
   position: sticky;
-  background-color: black;
   top: 0;
   left: 0;
   z-index: 2;
@@ -76,7 +75,6 @@
     left: 0;
     right: 0;
     padding: 20px;
-    background-color: #000;
     display: none;
 
     @media screen and (min-width: 768px) {
