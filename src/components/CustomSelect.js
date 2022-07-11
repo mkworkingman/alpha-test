@@ -22,12 +22,12 @@ export const CustomSelect = ({name, values, currentValue, setValue}) => {
     <div className="select">
       <div className="select__name">{name}</div>
       <div
-        className="select__itself"
+        className={open ? "select__itself select__itself--active" : "select__itself"}
         onClick={() => setOpen(!open)}
         ref={ref}
       >
         <p className="select__active-value">{currentValue}</p>
-        <ul className={open ? "select__values-list select__values-list--active" : "select__values-list"}>
+        <ul className="select__values-list">
           <li className="select__value" onClick={() => dispatch(setValue(null))}></li>
           {values.map(v => (
             <li key={v} className="select__value" onClick={() => dispatch(setValue(v))}>{v}</li>
