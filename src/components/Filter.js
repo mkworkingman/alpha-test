@@ -24,18 +24,20 @@ export const Filter = () => {
         currentValue={currentTime}
         setValue={setCurrentTime}
       />
-      <button
-        className="filter__btn filter__btn--clean"
-        onClick={() => dispatch(clear())}
-      >
-        Clean
-      </button>
-      <button
-        className="filter__btn filter__btn--search"
-        onClick={() => dispatch(search())}
-      >
-        Search
-      </button>
+      <div className="filter__btns-list">
+        <button
+          className="filter__btn filter__btn--clean"
+          onClick={() => dispatch(clear())}
+        >
+          Clean
+        </button>
+        <button
+          className="filter__btn filter__btn--search"
+          onClick={() => dispatch(search())}
+        >
+          Search
+        </button>
+      </div>
     </div>
   )
 }

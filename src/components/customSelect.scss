@@ -1,6 +1,7 @@
 .select {
-  display: inline-flex;
+  display: flex;
   font-size: 14px;
+  flex: 1 0 320px;
 
   &__name {
     padding: 5px 12px;
@@ -15,7 +16,7 @@
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     position: relative;
-    width: 300px;
+    flex: 1;
     cursor: pointer;
 
     &::after {
