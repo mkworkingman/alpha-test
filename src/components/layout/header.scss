@@ -111,4 +111,15 @@
       }
     }
   }
+
+  .hamburger-menu__link a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 200ms;
+
+    &.active {
+      text-decoration-color: #534878;
+    }
+  }
 }

@@ -15,7 +15,7 @@ export const Speakers = () => {
 
   return (
     <section>
-      <h2>Спикеры нашего форума</h2>
+      <h2 id="speakers">Спикеры нашего форума</h2>
       <Filter />
       {time && time.map(hour => (
         <SpeakersByDate
