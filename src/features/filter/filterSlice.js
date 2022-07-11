@@ -23,19 +23,20 @@ export const filterSlice = createSlice({
   reducers: {
     setCurrentGender: (state, action) => {
       state.currentGender = action.payload
-
-      let speakers = state.initialSpeakers
-      if (action.payload) speakers = speakers.filter(v => v.gender === action.payload)
-      if (state.currentTime) speakers = speakers.filter(v => v.performance_time === state.currentTime)
-      state.currentSpeakers = speakers
     },
     setCurrentTime: (state, action) => {
       state.currentTime = action.payload
-
+    },
+    search: state => {
       let speakers = state.initialSpeakers
-      if (action.payload) speakers = speakers.filter(v => v.performance_time === action.payload)
       if (state.currentGender) speakers = speakers.filter(v => v.gender === state.currentGender)
+      if (state.currentTime) speakers = speakers.filter(v => v.performance_time === state.currentTime)
       state.currentSpeakers = speakers
+    },
+    clear: state => {
+      state.currentSpeakers = state.initialSpeakers
+      state.currentGender = null
+      state.currentTime = null
     }
   },
   extraReducers: builder => {
@@ -57,6 +58,6 @@ export const filterSlice = createSlice({
   },
 })
 
-export const { setCurrentGender, setCurrentTime } = filterSlice.actions;
+export const { setCurrentGender, setCurrentTime, clear, search } = filterSlice.actions;
 
 export default filterSlice.reducer
