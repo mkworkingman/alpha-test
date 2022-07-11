@@ -1,0 +1,55 @@
+.footer {
+  display: grid;
+  align-items: end;
+  justify-content: space-around;
+  width: 100%;
+  min-width: 320px;
+  grid-template-areas:
+    "logo links"
+    "info links"
+    "socials socials";
+  gap: 20px 0;
+  font-size: clamp(10px, 2.1vw, 16px);
+  padding-block: 90px;
+
+  @media screen and (min-width: 1024px) {
+    grid-template-areas: "logo info links socials";
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 4vw, 30px);
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__info {
+    grid-area: info;
+  }
+
+  &__links {
+    grid-area: links;
+    text-transform: uppercase;
+  }
+
+  &__socials {
+    grid-area: socials;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    &-list-item {
+      border: 3px solid #534878;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

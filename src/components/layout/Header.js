@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './header.scss'
-import logo from '../../images/logo.svg';
-import { RegistrationBtn } from '../RegistrationBtn';
+import logo from '../../images/logo.svg'
+import { RegistrationBtn } from '../RegistrationBtn'
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
@@ -11,7 +11,7 @@ export const Header = () => {
       <div className="header-offset"></div>
       <header className="header">
         <nav className="container">
-          <img className="header__logo" src={logo} alt="logo" />
+          <img className="logo" src={logo} alt="logo" />
           <div
             className={openMenu ? "hamburger-icon hamburger-icon--active" : "hamburger-icon"}
             onClick={() => setOpenMenu(!openMenu)}

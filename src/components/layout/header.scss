@@ -17,14 +17,6 @@
     justify-content: space-between;
   }
 
-  &__logo {
-    width: 150px;
-
-    @media screen and (min-width: 768px) {
-      width: min(19.6vw, 188px);
-    }
-  }
-
   .hamburger-icon {
     width: 40px;
     height: 40px;
