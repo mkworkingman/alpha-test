@@ -22,18 +22,18 @@ export const Speakers = () => {
       {loading
         ? <h3>Loading...</h3>
         : (success
-            ? <>
-                <Filter />
-                {time && time.map(hour => (
-                  <SpeakersByDate
-                    key={hour}
-                    hour={hour}
-                    speakers={speakers.filter(v => v.performance_time === hour)}
-                  />
-                ))}
-            </>
-            : <h3>Sorry, something went wrong...</h3>
-          )
+          ? <>
+            <Filter />
+            {time && time.map(hour => (
+              <SpeakersByDate
+                key={hour}
+                hour={hour}
+                speakers={speakers.filter(v => v.performance_time === hour)}
+              />
+            ))}
+          </>
+          : <h3>Sorry, something went wrong...</h3>
+        )
       }
     </section>
   )
