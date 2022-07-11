@@ -1,3 +1,21 @@
 .main {
   flex: 1;
+  position: relative;
+
+  &::after {
+    @media screen and (min-width: 1200px) {      
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 660px;
+      width: 680px;
+      background-image: url('../../images/face.png');
+      background-repeat: no-repeat;
+      background-position: right;
+      z-index: -1;
+      -webkit-mask-image: linear-gradient(transparent, white, transparent);
+      mask-image: linear-gradient(transparent, white, transparent);
+    }
+  }
 }

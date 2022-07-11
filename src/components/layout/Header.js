@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './header.scss'
 import logo from '../../images/logo.svg'
 import { RegistrationBtn } from '../RegistrationBtn'
+import { HeaderLinks } from '../HeaderLinks'
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
@@ -15,7 +16,7 @@ export const Header = () => {
       } else {
         setScrollOnTop(true)
       }
-      if (speakersHeading.getBoundingClientRect().bottom <= 140) {
+      if (speakersHeading.getBoundingClientRect().bottom <= 160) {
         setActiveLink('speakers')
       } else {
         setActiveLink('about')
@@ -28,7 +29,7 @@ export const Header = () => {
       clearTimeout(timeout)
       timeout = setTimeout(() => {
         addUnderline()
-      }, 200)
+      }, 100)
     }
     window.addEventListener('scroll', scrollHandler)
     return () => {
@@ -49,26 +50,10 @@ export const Header = () => {
             <div className="hamburger-icon__lines"></div>
           </div>
           <div className={openMenu ? "hamburger-menu hamburger-menu--active" : "hamburger-menu"}>
-            <ul className="hamburger-menu__links-list">
-              <li className="hamburger-menu__link">
-                <a
-                  href="#about"
-                  onClick={() => setOpenMenu(false)}
-                  className={activeLink === 'about' ? 'active' : ''}
-                >
-                  О мероприятии
-                </a>
-              </li>
-              <li className="hamburger-menu__link">
-                <a
-                  href="#speakers"
-                  onClick={() => setOpenMenu(false)}
-                  className={activeLink === 'speakers' ? 'active' : ''}
-                >
-                  Спикеры
-                </a>
-              </li>
-            </ul>
+            <HeaderLinks
+              activeLink={activeLink}
+              openMenu={setOpenMenu}
+            />
             <RegistrationBtn />
           </div>
         </nav>
