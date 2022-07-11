@@ -7,15 +7,15 @@ export const CustomSelect = ({name, values, currentValue, setValue}) => {
   const ref = useRef(null)
   const [open, setOpen] = useState(false)
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
       if (ref.current && !ref.current.contains(event.target)) {
-        setOpen && setOpen(false);
+        setOpen && setOpen(false)
       }
-    };
-    document.addEventListener('click', handleClickOutside, true);
+    }
+    document.addEventListener('click', handleClickOutside, true)
     return () => {
-      document.removeEventListener('click', handleClickOutside, true);
-    };
+      document.removeEventListener('click', handleClickOutside, true)
+    }
   }, [setOpen])
 
   return (
