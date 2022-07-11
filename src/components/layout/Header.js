@@ -44,7 +44,8 @@ export const Header = () => {
           <img className="logo" src={logo} alt="logo" />
           <HamburgerMenu
             activeLink={activeLink}
-            openMenu={setOpenMenu}
+            openMenu={openMenu}
+            setOpenMenu={setOpenMenu}
           />
         </nav>
       </header>

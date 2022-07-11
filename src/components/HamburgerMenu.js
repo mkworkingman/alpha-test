@@ -1,12 +1,12 @@
 import React from 'react'
 import { RegistrationBtn } from './RegistrationBtn'
 
-export const HamburgerMenu = ({activeLink, openMenu}) => {
+export const HamburgerMenu = ({activeLink, openMenu, setOpenMenu}) => {
   return (
     <>
       <div
         className={openMenu ? "hamburger-icon hamburger-icon--active" : "hamburger-icon"}
-        onClick={() => openMenu(!openMenu)}
+        onClick={() => setOpenMenu(!openMenu)}
       >
         <div className="hamburger-icon__lines"></div>
       </div>
@@ -15,7 +15,7 @@ export const HamburgerMenu = ({activeLink, openMenu}) => {
           <li className="hamburger-menu__link">
             <a
               href="#about"
-              onClick={() => openMenu(false)}
+              onClick={() => setOpenMenu(false)}
               className={activeLink === 'about' ? 'active' : ''}
             >
               О мероприятии
@@ -24,7 +24,7 @@ export const HamburgerMenu = ({activeLink, openMenu}) => {
           <li className="hamburger-menu__link">
             <a
               href="#speakers"
-              onClick={() => openMenu(false)}
+              onClick={() => setOpenMenu(false)}
               className={activeLink === 'speakers' ? 'active' : ''}
             >
               Спикеры
