@@ -27,7 +27,8 @@ body {
   background-color: #060606;
   background-image:
     radial-gradient(at top right, #190022, transparent 400px),
-    radial-gradient(at top left, #00092E, transparent 400px);
+    radial-gradient(at top left, #00092E, transparent 400px),
+    linear-gradient(0deg, rgba(100, 19, 200, 0.32), transparent 500px);
   background-repeat: no-repeat;
 
   color: var(--text-clr);
