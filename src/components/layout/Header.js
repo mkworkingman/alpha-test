@@ -10,11 +10,6 @@ export const Header = () => {
   useEffect(() => {
     const speakersHeading = document.querySelector('#speakers')
     function addUnderline() {
-      if (document.querySelector('html').scrollTop === 0) {
-        setScrollOnTop(false)
-      } else {
-        setScrollOnTop(true)
-      }
       if (speakersHeading.getBoundingClientRect().bottom <= 160) {
         setActiveLink('speakers')
       } else {
@@ -22,6 +17,14 @@ export const Header = () => {
       }
     }
     addUnderline()
+
+    function scrolledFromTop() {
+      if (document.querySelector('html').scrollTop > 0) {
+        setScrollOnTop(true)
+        window.removeEventListener('scroll', scrolledFromTop)
+      }
+    }
+    window.addEventListener('scroll', scrolledFromTop)
 
     let timeout
     function scrollHandler() {
@@ -33,6 +36,7 @@ export const Header = () => {
     window.addEventListener('scroll', scrollHandler)
     return () => {
       window.removeEventListener('scroll', scrollHandler)
+      window.removeEventListener('scroll', scrolledFromTop)
     }
   }, [])
 
