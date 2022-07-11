@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './header.scss'
 import logo from '../../images/logo.svg'
-import { RegistrationBtn } from '../RegistrationBtn'
-import { HeaderLinks } from '../HeaderLinks'
+import { HamburgerMenu } from '../HamburgerMenu'
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false)
@@ -43,19 +42,10 @@ export const Header = () => {
       <header className={scrollOnTop ? "header header--on-top" : "header"}>
         <nav className="container">
           <img className="logo" src={logo} alt="logo" />
-          <div
-            className={openMenu ? "hamburger-icon hamburger-icon--active" : "hamburger-icon"}
-            onClick={() => setOpenMenu(!openMenu)}
-          >
-            <div className="hamburger-icon__lines"></div>
-          </div>
-          <div className={openMenu ? "hamburger-menu hamburger-menu--active" : "hamburger-menu"}>
-            <HeaderLinks
-              activeLink={activeLink}
-              openMenu={setOpenMenu}
-            />
-            <RegistrationBtn />
-          </div>
+          <HamburgerMenu
+            activeLink={activeLink}
+            openMenu={setOpenMenu}
+          />
         </nav>
       </header>
     </>
